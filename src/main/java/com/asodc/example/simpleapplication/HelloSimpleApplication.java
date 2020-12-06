@@ -6,9 +6,9 @@ import com.jme3.math.ColorRGBA;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.shape.Box;
 
-public class HelloWorldSimpleApplication extends SimpleApplication {
+public class HelloSimpleApplication extends SimpleApplication {
     public static void main(String... args) {
-        new HelloWorldSimpleApplication().start();
+        new HelloSimpleApplication().start();
     }
 
     public void simpleInitApp() {
