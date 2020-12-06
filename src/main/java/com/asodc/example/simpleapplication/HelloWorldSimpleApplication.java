@@ -1,4 +1,4 @@
-package com.asodc.example;
+package com.asodc.example.simpleapplication;
 
 import com.jme3.app.SimpleApplication;
 import com.jme3.material.Material;
@@ -6,9 +6,9 @@ import com.jme3.math.ColorRGBA;
 import com.jme3.scene.Geometry;
 import com.jme3.scene.shape.Box;
 
-public class JmeHelloWorld extends SimpleApplication {
+public class HelloWorldSimpleApplication extends SimpleApplication {
     public static void main(String... args) {
-        new JmeHelloWorld().start();
+        new HelloWorldSimpleApplication().start();
     }
 
     public void simpleInitApp() {
