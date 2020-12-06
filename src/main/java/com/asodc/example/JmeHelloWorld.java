@@ -12,11 +12,11 @@ public class JmeHelloWorld extends SimpleApplication {
     }
 
     public void simpleInitApp() {
-        Box b = new Box(1, 1, 1);
-        Geometry geom = new Geometry("Box", b);
-        Material mat = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
-        mat.setColor("Color", ColorRGBA.Blue);
-        geom.setMaterial(mat);
-        rootNode.attachChild(geom);
+        Box box = new Box(1, 1, 1);
+        Geometry geometry = new Geometry("Box", box);
+        Material material = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+        material.setColor("Color", ColorRGBA.Blue);
+        geometry.setMaterial(material);
+        rootNode.attachChild(geometry);
     }
 }
