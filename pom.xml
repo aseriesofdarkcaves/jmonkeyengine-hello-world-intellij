@@ -34,6 +34,7 @@
             <scope>runtime</scope>
         </dependency>
 
+        <!-- core stuff and common materials -->
         <dependency>
             <groupId>org.jmonkeyengine</groupId>
             <artifactId>jme3-core</artifactId>

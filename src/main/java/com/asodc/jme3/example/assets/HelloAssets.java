@@ -33,12 +33,12 @@ public class HelloAssets extends SimpleApplication {
         rootNode.attachChild(teapot);
 
         // Create a wall with a simple texture from test_data
-        Box box = new Box(2.5f,2.5f,1.0f);
-        Spatial wall = new Geometry("Box", box );
+        Box box = new Box(2.5f, 2.5f, 1.0f);
+        Spatial wall = new Geometry("Box", box);
         Material mat_brick = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         mat_brick.setTexture("ColorMap", assetManager.loadTexture("Textures/Terrain/BrickWall/BrickWall.jpg"));
         wall.setMaterial(mat_brick);
-        wall.setLocalTranslation(2.0f,-2.5f,0.0f);
+        wall.setLocalTranslation(2.0f, -2.5f, 0.0f);
         rootNode.attachChild(wall);
 
         // Display a line of text with a default font
