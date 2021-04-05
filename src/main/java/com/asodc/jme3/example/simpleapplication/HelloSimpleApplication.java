@@ -12,7 +12,7 @@ public class HelloSimpleApplication extends SimpleApplication {
     }
 
     public void simpleInitApp() {
-        Box box = new Box(1, 1, 1);
+        Box box = new Box(1f, 1f, 1f);
 
         Geometry geometry = new Geometry("Box", box);
 
