@@ -25,6 +25,12 @@ public class HelloNode extends SimpleApplication {
         pivot.attachChild(redBox);
         pivot.rotate(0.4f, 0.4f, 0f);
 
+        // not all nodes need to be visible
+        // they can also store data
+        Node testNode = new Node("test");
+        testNode.setUserData("health", 100);
+        int health = testNode.getUserData("health");
+
         rootNode.attachChild(pivot);
     }
 
