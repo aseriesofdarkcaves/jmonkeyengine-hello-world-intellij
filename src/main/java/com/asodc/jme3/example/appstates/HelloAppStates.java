@@ -3,9 +3,8 @@ package com.asodc.jme3.example.appstates;
 import com.jme3.app.SimpleApplication;
 
 public class HelloAppStates extends SimpleApplication {
-
     public HelloAppStates() {
-        // TODO: pass in custom app states when they have been created
+        // TODO: create app state classes and pass them into the constructor
         super();
     }
 
