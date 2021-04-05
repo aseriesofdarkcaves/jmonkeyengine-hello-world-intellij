@@ -1,4 +1,4 @@
-package com.asodc.example.simpleapplication;
+package com.asodc.jme3.example.simpleapplication;
 
 import com.jme3.app.SimpleApplication;
 import com.jme3.material.Material;
@@ -13,10 +13,14 @@ public class HelloSimpleApplication extends SimpleApplication {
 
     public void simpleInitApp() {
         Box box = new Box(1, 1, 1);
+
         Geometry geometry = new Geometry("Box", box);
+
         Material material = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         material.setColor("Color", ColorRGBA.Blue);
+
         geometry.setMaterial(material);
+
         rootNode.attachChild(geometry);
     }
 }

@@ -1,4 +1,4 @@
-package com.asodc.example.appstates;
+package com.asodc.jme3.example.appstates;
 
 import com.jme3.app.SimpleApplication;
 
