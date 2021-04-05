@@ -45,6 +45,20 @@
             <artifactId>jme3-lwjgl</artifactId>
             <version>${jmonkey.version}</version>
         </dependency>
+
+        <!-- allows use of the test assets -->
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-testdata</artifactId>
+            <version>${jmonkey.version}</version>
+        </dependency>
+
+        <!-- allows use of the plugins, i.e. loading XML etc. -->
+        <dependency>
+            <groupId>org.jmonkeyengine</groupId>
+            <artifactId>jme3-plugins</artifactId>
+            <version>${jmonkey.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
