@@ -14,15 +14,17 @@
     </properties>
 
     <repositories>
+        <!-- need this repo to get jme3-testdata -->
         <repository>
             <id>bintray-jmonkeyengine-org.jmonkeyengine</id>
             <name>bintray</name>
-            <url>http://dl.bintray.com/jmonkeyengine/org.jmonkeyengine</url>
+            <url>https://dl.bintray.com/jmonkeyengine/org.jmonkeyengine</url>
         </repository>
 
+        <!-- other dependencies can be found in this repo -->
         <repository>
             <id>jcenter</id>
-            <url>http://jcenter.bintray.com</url>
+            <url>https://jcenter.bintray.com</url>
         </repository>
     </repositories>
 
