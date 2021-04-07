@@ -9,9 +9,9 @@ import com.jme3.scene.Geometry;
 import com.jme3.scene.Spatial;
 import com.jme3.scene.shape.Box;
 
-public class HelloAssets extends SimpleApplication {
+public class HelloAsset extends SimpleApplication {
     public static void main(String... args) {
-        new HelloAssets().start();
+        new HelloAsset().start();
     }
 
     @Override
