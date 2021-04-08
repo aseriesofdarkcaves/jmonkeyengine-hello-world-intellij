@@ -10,6 +10,8 @@ public class PulsingBox extends SimpleApplication {
     private Geometry box;
     private float scaleLowerLimit;
     private float scaleUpperLimit;
+    private float scaleSpeed;
+    private boolean isGrowing;
 
     public static void main(String... args) {
         new PulsingBox().start();
@@ -21,25 +23,27 @@ public class PulsingBox extends SimpleApplication {
         rootNode.attachChild(box);
 
         scaleLowerLimit = 1f;
-        scaleUpperLimit = 100f;
+        scaleUpperLimit = 2.5f;
+        scaleSpeed = 1f;
+        isGrowing = true;
 
+        // deactivate movement to aid debugging
         flyCam.setEnabled(false);
     }
 
     @Override
     public void simpleUpdate(float tpf) {
-        // TODO: make the box pulsate
-        // box.getLocalScale will return the current scale of the box as a Vector3f
-        // we have a cube so we only need to check one component for its scale because they're all the same scale
+        if (isGrowing)
+            box.scale(1f + (scaleSpeed * tpf));
+        else
+            box.scale(1f - (scaleSpeed * tpf));
+
         float currentScale = box.getLocalScale().x;
 
-        if (currentScale <= scaleLowerLimit) {
-            box.scale(1.01f);
-//            box.setLocalScale();
-        } else {
-            box.scale(0.9f);
-        }
-        System.out.println(currentScale);
+        if (currentScale > scaleUpperLimit)
+            isGrowing = false;
+        else if (currentScale < scaleLowerLimit)
+            isGrowing = true;
     }
 
     private Geometry createBoxGeometry(String name, ColorRGBA color) {
