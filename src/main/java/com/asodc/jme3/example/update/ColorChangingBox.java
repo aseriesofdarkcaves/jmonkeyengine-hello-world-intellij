@@ -10,7 +10,7 @@ public class ColorChangingBox extends SimpleApplication {
     private Material boxMaterial;
 
     private float elapsedTickTime = 0f;
-    private float colorChangeSpeed = 0.1f;
+    private float colorChangeRate = 1f;
 
     public static void main(String... args) {
         new ColorChangingBox().start();
@@ -33,7 +33,7 @@ public class ColorChangingBox extends SimpleApplication {
     public void simpleUpdate(float tpf) {
         elapsedTickTime += tpf;
 
-        if (elapsedTickTime > colorChangeSpeed) {
+        if (elapsedTickTime > colorChangeRate) {
             boxMaterial.setColor("Color", ColorRGBA.randomColor());
             elapsedTickTime = 0f;
         }
