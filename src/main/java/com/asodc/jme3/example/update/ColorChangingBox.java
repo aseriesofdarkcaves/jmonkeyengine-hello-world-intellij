@@ -35,7 +35,7 @@ public class ColorChangingBox extends SimpleApplication {
 
         if (elapsedTickTime > colorChangeSpeed) {
             boxMaterial.setColor("Color", ColorRGBA.randomColor());
-            elapsedTickTime = 0;
+            elapsedTickTime = 0f;
         }
     }
 }
