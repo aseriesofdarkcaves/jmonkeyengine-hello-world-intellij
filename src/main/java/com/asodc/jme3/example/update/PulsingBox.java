@@ -26,9 +26,6 @@ public class PulsingBox extends SimpleApplication {
         scaleUpperLimit = 2.5f;
         scaleSpeed = 1f;
         isGrowing = true;
-
-        // deactivate movement to aid debugging
-        flyCam.setEnabled(false);
     }
 
     @Override
