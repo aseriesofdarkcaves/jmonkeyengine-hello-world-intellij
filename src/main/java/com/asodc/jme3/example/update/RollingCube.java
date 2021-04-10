@@ -38,6 +38,8 @@ public class RollingCube extends SimpleApplication {
      * Moves the cube in a manner where the rotation and translation rates can vary independently from each other.
      *
      * @param tpf time per frame
+     * @param rotationRate the rate of rotation around the x-axis
+     * @param translationRate the rate of translation along the z-axis
      */
     private void rollCube(float tpf, float rotationRate, float translationRate) {
         cubeGeometry.rotate(rotationRate * tpf, 0f, 0f);
