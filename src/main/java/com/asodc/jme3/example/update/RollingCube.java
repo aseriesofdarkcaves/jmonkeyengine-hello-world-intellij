@@ -9,8 +9,6 @@ import com.jme3.scene.shape.Box;
 public class RollingCube extends SimpleApplication {
     private Geometry cubeGeometry;
 
-    private float rotationTicks = 0f;
-    private float translationTicks = 0f;
     private float rotationRate = 2f;
     private float translationRate = 2f;
 
@@ -33,22 +31,7 @@ public class RollingCube extends SimpleApplication {
 
     @Override
     public void simpleUpdate(float tpf) {
-        doIndependentMovement(tpf, rotationRate, translationRate);
-    }
-
-    /**
-     * Moves the cube in a manner where the rotation and translation rates are locked to the same value.
-     *
-     * @param tpf time per frame
-     * @param movementRate the rate of movement for rotation and translation
-     */
-    private void doLockedMovement(float tpf, float movementRate) {
-        rotationTicks += tpf;
-        if (rotationTicks < movementRate) {
-            cubeGeometry.rotate(movementRate * tpf, 0f, 0f);
-            cubeGeometry.move(0f, 0f, movementRate * tpf);
-            rotationTicks = 0;
-        }
+        rollCube(tpf, rotationRate, translationRate);
     }
 
     /**
@@ -56,17 +39,8 @@ public class RollingCube extends SimpleApplication {
      *
      * @param tpf time per frame
      */
-    private void doIndependentMovement(float tpf, float rotationRate, float translationRate) {
-        rotationTicks += tpf;
-
-        if (rotationTicks < rotationRate) {
-            cubeGeometry.rotate(rotationRate * tpf, 0f, 0f);
-            rotationTicks = 0f;
-        }
-
-        if (translationTicks < translationRate) {
-            cubeGeometry.move(0f, 0f, translationRate * tpf);
-            translationTicks = 0f;
-        }
+    private void rollCube(float tpf, float rotationRate, float translationRate) {
+        cubeGeometry.rotate(rotationRate * tpf, 0f, 0f);
+        cubeGeometry.move(0f, 0f, translationRate * tpf);
     }
 }
