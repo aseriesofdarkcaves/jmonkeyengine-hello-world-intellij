@@ -61,13 +61,13 @@ public class HelloMaterials extends SimpleApplication {
         Texture diffuseMap = assetManager.loadTexture("Textures/Terrain/Pond/Pond.jpg");
         Texture normalMap = assetManager.loadTexture("Textures/Terrain/Pond/Pond_normal.png");
 
-        Material material = new Material(assetManager, "Common/MatDefs/Light/Lighting.j3md");
-        material.setTexture("DiffuseMap", diffuseMap);
-        material.setTexture("NormalMap", normalMap);
-        material.setBoolean("UseMaterialColors", true);
-        material.setColor("Diffuse", ColorRGBA.White);
-        material.setColor("Specular", ColorRGBA.White);
-        material.setFloat("Shininess", 64f);
+//        Material material = new Material(assetManager, "Common/MatDefs/Light/Lighting.j3md");
+//        material.setTexture("DiffuseMap", diffuseMap);
+//        material.setTexture("NormalMap", normalMap);
+//        material.setBoolean("UseMaterialColors", true);
+//        material.setColor("Diffuse", ColorRGBA.White);
+//        material.setColor("Specular", ColorRGBA.White);
+//        material.setFloat("Shininess", 64f);
 
         Sphere sphereMesh = new Sphere(32, 32, 2f);
         sphereMesh.setTextureMode(Sphere.TextureMode.Projected);
@@ -75,7 +75,9 @@ public class HelloMaterials extends SimpleApplication {
         TangentBinormalGenerator.generate(sphereMesh);
 
         Geometry sphere = new Geometry("sphere", sphereMesh);
-        sphere.setMaterial(material);
+        // alternatively, you can define your material in an external j3m file (here it's under resources)
+        sphere.setMaterial(assetManager.loadMaterial("materials/MyCustomMaterial.j3m"));
+//        sphere.setMaterial(material);
         sphere.setLocalTranslation(0f, 2f, -2f);
         sphere.rotate(1.6f, 0f, 0f);
 
