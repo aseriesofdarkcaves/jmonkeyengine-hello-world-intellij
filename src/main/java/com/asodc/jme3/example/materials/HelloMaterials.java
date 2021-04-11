@@ -11,6 +11,7 @@ import com.jme3.scene.Geometry;
 import com.jme3.scene.shape.Box;
 import com.jme3.scene.shape.Sphere;
 import com.jme3.texture.Texture;
+import com.jme3.util.TangentBinormalGenerator;
 
 public class HelloMaterials extends SimpleApplication {
     public static void main(String... args) {
@@ -68,9 +69,12 @@ public class HelloMaterials extends SimpleApplication {
         material.setColor("Specular", ColorRGBA.White);
         material.setFloat("Shininess", 64f);
 
-        Sphere mesh = new Sphere(32, 32, 2f);
+        Sphere sphereMesh = new Sphere(32, 32, 2f);
+        sphereMesh.setTextureMode(Sphere.TextureMode.Projected);
 
-        Geometry sphere = new Geometry("sphere", mesh);
+        TangentBinormalGenerator.generate(sphereMesh);
+
+        Geometry sphere = new Geometry("sphere", sphereMesh);
         sphere.setMaterial(material);
         sphere.setLocalTranslation(0f, 2f, -2f);
         sphere.rotate(1.6f, 0f, 0f);
