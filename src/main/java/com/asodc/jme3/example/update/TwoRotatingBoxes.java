@@ -34,11 +34,14 @@ public class TwoRotatingBoxes extends SimpleApplication {
     }
 
     private Geometry createBoxGeometry(String name, ColorRGBA color) {
-        Box boxMesh = new Box(1f, 1f, 1f);
-        Geometry boxGeometry = new Geometry(name, boxMesh);
         Material boxMaterial = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         boxMaterial.setColor("Color", color);
+
+        Box boxMesh = new Box(1f, 1f, 1f);
+
+        Geometry boxGeometry = new Geometry(name, boxMesh);
         boxGeometry.setMaterial(boxMaterial);
+
         return boxGeometry;
     }
 }

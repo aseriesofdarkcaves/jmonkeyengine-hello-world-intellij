@@ -18,10 +18,10 @@ public class RollingCube extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
-        Box cubeMesh = new Box(1f, 1f, 1f);
-
         Material cubeMaterial = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         cubeMaterial.setColor("Color", ColorRGBA.Red);
+
+        Box cubeMesh = new Box(1f, 1f, 1f);
 
         cubeGeometry = new Geometry("cube", cubeMesh);
         cubeGeometry.setMaterial(cubeMaterial);

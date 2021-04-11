@@ -25,17 +25,20 @@ public class HelloInput extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
-        Box boxMesh = new Box(1f, 1f, 1f);
+        initCube();
+        initKeybindings();
+    }
 
+    private void initCube() {
         Material material = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         material.setColor("Color", ColorRGBA.Blue);
+
+        Box boxMesh = new Box(1f, 1f, 1f);
 
         cube = new Geometry("Player", boxMesh);
         cube.setMaterial(material);
 
         rootNode.attachChild(cube);
-
-        initKeybindings();
     }
 
     /**
@@ -46,8 +49,7 @@ public class HelloInput extends SimpleApplication {
         inputManager.addMapping("Pause", new KeyTrigger(KeyInput.KEY_P));
         inputManager.addMapping("Left", new KeyTrigger(KeyInput.KEY_J));
         inputManager.addMapping("Right", new KeyTrigger(KeyInput.KEY_K));
-        inputManager.addMapping("Rotate", new KeyTrigger(KeyInput.KEY_SPACE),
-                new MouseButtonTrigger(MouseInput.BUTTON_LEFT));
+        inputManager.addMapping("Rotate", new KeyTrigger(KeyInput.KEY_SPACE), new MouseButtonTrigger(MouseInput.BUTTON_LEFT));
 
         final ActionListener actionListener = (name, keyPressed, tpf) -> {
             if (name.equals("Pause") && !keyPressed) {
@@ -73,7 +75,6 @@ public class HelloInput extends SimpleApplication {
             }
         };
 
-        // Add the names to the action listener.
         inputManager.addListener(actionListener, "Pause");
         inputManager.addListener(analogListener, "Left", "Right", "Rotate");
     }

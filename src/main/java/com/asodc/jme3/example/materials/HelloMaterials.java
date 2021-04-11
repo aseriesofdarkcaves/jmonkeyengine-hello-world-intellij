@@ -80,8 +80,7 @@ public class HelloMaterials extends SimpleApplication {
 
     private void initLighting() {
         DirectionalLight directionalLight = new DirectionalLight();
-        Vector3f normalizedLightVector = new Vector3f(1f, 0f, -2f).normalizeLocal();
-        directionalLight.setDirection(normalizedLightVector);
+        directionalLight.setDirection(new Vector3f(1f, 0f, -2f));
         directionalLight.setColor(ColorRGBA.White);
 
         rootNode.addLight(directionalLight);

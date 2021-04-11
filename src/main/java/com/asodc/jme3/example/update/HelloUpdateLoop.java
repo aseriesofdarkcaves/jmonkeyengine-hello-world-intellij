@@ -15,11 +15,14 @@ public class HelloUpdateLoop extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
-        Box boxMesh = new Box(1f, 1f, 1f);
-        boxGeometry = new Geometry("player", boxMesh);
         Material boxMaterial = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         boxMaterial.setColor("Color", ColorRGBA.Blue);
+
+        Box boxMesh = new Box(1f, 1f, 1f);
+
+        boxGeometry = new Geometry("box", boxMesh);
         boxGeometry.setMaterial(boxMaterial);
+
         rootNode.attachChild(boxGeometry);
     }
 

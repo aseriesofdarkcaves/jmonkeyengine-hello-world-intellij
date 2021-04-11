@@ -18,12 +18,11 @@ public class ColorChangingBox extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
+        boxMaterial = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
+
         Box boxMesh = new Box(1f, 1f, 1f);
 
         Geometry boxGeometry = new Geometry("box", boxMesh);
-
-        boxMaterial = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
-
         boxGeometry.setMaterial(boxMaterial);
 
         rootNode.attachChild(boxGeometry);

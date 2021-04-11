@@ -12,15 +12,14 @@ public class HelloSimpleApplication extends SimpleApplication {
     }
 
     public void simpleInitApp() {
-        Box box = new Box(1f, 1f, 1f);
-
-        Geometry geometry = new Geometry("Box", box);
-
         Material material = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         material.setColor("Color", ColorRGBA.Blue);
 
-        geometry.setMaterial(material);
+        Box boxMesh = new Box(1f, 1f, 1f);
 
-        rootNode.attachChild(geometry);
+        Geometry boxGeometry = new Geometry("box", boxMesh);
+        boxGeometry.setMaterial(material);
+
+        rootNode.attachChild(boxGeometry);
     }
 }

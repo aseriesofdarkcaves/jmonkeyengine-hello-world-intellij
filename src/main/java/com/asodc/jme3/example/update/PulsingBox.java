@@ -8,10 +8,10 @@ import com.jme3.scene.shape.Box;
 
 public class PulsingBox extends SimpleApplication {
     private Geometry box;
-    private float scaleLowerLimit;
-    private float scaleUpperLimit;
-    private float scaleSpeed;
-    private boolean isGrowing;
+    private float scaleLowerLimit = 1f;
+    private float scaleUpperLimit = 2.5f;
+    private float scaleSpeed = 1f;
+    private boolean isGrowing = true;
 
     public static void main(String... args) {
         new PulsingBox().start();
@@ -19,13 +19,9 @@ public class PulsingBox extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
-        box = createBoxGeometry("box1", ColorRGBA.Blue);
-        rootNode.attachChild(box);
+        box = createBoxGeometry("box", ColorRGBA.Blue);
 
-        scaleLowerLimit = 1f;
-        scaleUpperLimit = 2.5f;
-        scaleSpeed = 1f;
-        isGrowing = true;
+        rootNode.attachChild(box);
     }
 
     @Override
@@ -44,11 +40,14 @@ public class PulsingBox extends SimpleApplication {
     }
 
     private Geometry createBoxGeometry(String name, ColorRGBA color) {
-        Box boxMesh = new Box(1f, 1f, 1f);
-        Geometry boxGeometry = new Geometry(name, boxMesh);
         Material boxMaterial = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         boxMaterial.setColor("Color", color);
+
+        Box boxMesh = new Box(1f, 1f, 1f);
+
+        Geometry boxGeometry = new Geometry(name, boxMesh);
         boxGeometry.setMaterial(boxMaterial);
+
         return boxGeometry;
     }
 }
