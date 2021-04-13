@@ -43,6 +43,7 @@
             <version>${jmonkey.version}</version>
         </dependency>
 
+        <!-- Light-Weight Java Game Library -->
         <dependency>
             <groupId>org.jmonkeyengine</groupId>
             <artifactId>jme3-lwjgl</artifactId>
