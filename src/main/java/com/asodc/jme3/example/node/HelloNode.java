@@ -20,29 +20,29 @@ public class HelloNode extends SimpleApplication {
         Geometry redBox = createBox("redBox", ColorRGBA.Red);
         redBox.setLocalTranslation(1f, 3f, 1f);
 
-        Node pivot = new Node("pivot");
-        pivot.attachChild(blueBox);
-        pivot.attachChild(redBox);
-        pivot.rotate(0.4f, 0.4f, 0f);
+        Node node = new Node("node");
+        node.attachChild(blueBox);
+        node.attachChild(redBox);
+        node.rotate(0.4f, 0.4f, 0f);
 
-        // not all nodes need to be visible
-        // they can also store data
+        // not all nodes need to be visible, they can also store data which can be used later
         Node testNode = new Node("test");
         testNode.setUserData("health", 100);
+
         int health = testNode.getUserData("health");
 
-        rootNode.attachChild(pivot);
+        rootNode.attachChild(node);
     }
 
     private Geometry createBox(String name, ColorRGBA color) {
-        Box box = new Box(1f, 1f, 1f);
-
-        Geometry geometry = new Geometry(name, box);
-
         Material material = new Material(assetManager, "Common/MatDefs/Misc/Unshaded.j3md");
         material.setColor("Color", color);
-        geometry.setMaterial(material);
 
-        return geometry;
+        Box boxMesh = new Box(1f, 1f, 1f);
+
+        Geometry boxGeometry = new Geometry(name, boxMesh);
+        boxGeometry.setMaterial(material);
+
+        return boxGeometry;
     }
 }
