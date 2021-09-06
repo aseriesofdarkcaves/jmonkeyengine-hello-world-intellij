@@ -13,21 +13,6 @@
         <jmonkey.version>3.3.2-stable</jmonkey.version>
     </properties>
 
-    <repositories>
-        <!-- need this repo to get jme3-testdata -->
-        <repository>
-            <id>bintray-jmonkeyengine-org.jmonkeyengine</id>
-            <name>bintray</name>
-            <url>https://dl.bintray.com/jmonkeyengine/org.jmonkeyengine</url>
-        </repository>
-
-        <!-- other dependencies can be found in this repo -->
-        <repository>
-            <id>jcenter</id>
-            <url>https://jcenter.bintray.com</url>
-        </repository>
-    </repositories>
-
     <dependencies>
         <dependency>
             <groupId>org.jmonkeyengine</groupId>
@@ -78,4 +63,19 @@
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <!-- need this repo to get jme3-testdata -->
+        <repository>
+            <id>bintray-jmonkeyengine-org.jmonkeyengine</id>
+            <name>bintray</name>
+            <url>https://dl.bintray.com/jmonkeyengine/org.jmonkeyengine</url>
+        </repository>
+
+        <!-- other dependencies can be found in this repo -->
+        <repository>
+            <id>jcenter</id>
+            <url>https://jcenter.bintray.com</url>
+        </repository>
+    </repositories>
 </project>
